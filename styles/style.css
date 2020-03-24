@@ -51,6 +51,7 @@ body {
 	background-color: #bec2de;
 	color: white;
 	cursor: pointer;
+	font-size: 20px;
 	/*width: 100px;*/
 	height: 100px;
 	padding: 30px;
@@ -70,6 +71,6 @@ body {
 
 .footer {
 	text-align: center;
-	background-color: #BBBBBB;
+	background-color: #CCCCCC;
 	padding: 2px;
 }
