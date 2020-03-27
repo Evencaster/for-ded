@@ -24,6 +24,7 @@
 			display: none;
 		}
 	</style>
+	<script type="text/javascript" src="literature.js"></script>
 	<script type="text/javascript">
 		const switchTab = tab => {
 			for(let el of document.getElementsByClassName('content')) el.style.display = 'none'
@@ -88,20 +89,21 @@
 			</div>
 		</div>
 		<div id="programm-content" class="content">
-			Программа
+			<ul id="programm-content-list"></ul>
 		</div>
 		<div id="theory-content" class="content">
-			Теория
+			<ul id="theory-content-list"></ul>
 		</div>
 		<div id="practic-content" class="content">
-			Практика
+			<ul id="practic-content-list"></ul>
 		</div>
 		<div id="control-content" class="content">
-			Контроль знаний
+			<ul id="control-content-list"></ul>
 		</div>
 		<div id="authors-content" class="content">
-			Об авторах
+			Мельников В. А.
 		</div>
 		<div class="footer">&#169;БГУИР</div>
+		<script type="text/javascript" src="add_literature.js"></script>
 	</body>
 	</html>
