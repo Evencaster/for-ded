@@ -17,6 +17,9 @@
 		#practic-content {
 			display: none;
 		}
+		#methodical-content {
+			display: none;
+		}
 		#control-content {
 			display: none;
 		}
@@ -48,6 +51,7 @@
 				<div id="programm-tab" onclick="switchTab('programm-content')" class="tab">Программа</div>
 				<div id="theory-tab" onclick="switchTab('theory-content')" class="tab">Теория</div>
 				<div id="practic-tab" onclick="switchTab('practic-content')" class="tab">Практика</div>
+				<div id="control-tab" onclick="switchTab('methodical-content')" class="tab">Методическая литература</div>
 				<div id="control-tab" onclick="switchTab('control-content')" class="tab">Контроль знаний</div>
 				<div id="authors-tab" onclick="switchTab('authors-content')" class="tab">Об авторах</div>
 			</div>
@@ -79,7 +83,15 @@
 					<div class="content-text">Материалы для практических занятий, лабораторного практикума по дисциплине</div>
 				</div>
 				<div class="content-cell">
-					<div class="content-button" onclick="switchTab('control-content')">
+					<div class="content-button" onclick="switchTab('methodical-content')">
+						<div class="content-button-text">
+							Методическая литература
+						</div>
+					</div>
+					<div class="content-text">--------ВСЕ-ВСЕ-ВСЕ------------------------------------</div>
+				</div>
+				<div class="content-cell">
+					<div class="content-button" onclick="switchTab('methodical-content')">
 						<div class="content-button-text">
 							Контроль знаний
 						</div>
@@ -96,6 +108,9 @@
 		</div>
 		<div id="practic-content" class="content">
 			<ul id="practic-content-list"></ul>
+		</div>
+		<div id="methodical-content" class="content">
+			<ul id="methodical-content-list"></ul>
 		</div>
 		<div id="control-content" class="content">
 			<ul id="control-content-list"></ul>
