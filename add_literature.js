@@ -9,6 +9,11 @@ for(let book of literature["Теория"]){
 	li.innerHTML = `<a href="ЭП/Теория по курсу/${book}.pdf">${book}</a>`;
 	document.getElementById('theory-content-list').append(li);
 }
+for(let presentation of literature["Теория"]){
+	var li = document.createElement('li');
+	li.innerHTML = `<a href="ЭП/Теория по курсу/Презентации лекций/${presentation}.ppt">${presentation}</a>`;
+	document.getElementById('theory-content-list').append(li);
+}
 for(let book of literature["Практика"]){
 	var li = document.createElement('li');
 	li.innerHTML = `<a href="ЭП/Практика/${book}.pdf">${book}</a>`;
@@ -18,7 +23,10 @@ for(let book of literature["Практика"]){
 }
 for(let book of literature["Методическая литература"]){
 	var li = document.createElement('li');
-	li.innerHTML = `<a href="${book}">${book}</a>`;
+	li.innerHTML = `<a href="ЭП/Методическая литература/Лабораторный практикум/${book}.pdf">${book}</a>`;
+	li.innerHTML = `<a href="ЭП/Методическая литература/Лабораторный практикум/Шаблоны отчетов по лабораторным работам/${book}.pdf">${book}</a>`;
+	li.innerHTML = `<a href="ЭП/Методическая литература/Практикум/${book}.pdf">${book}</a>`;
+	li.innerHTML = `<a href="ЭП/Методическая литература/Учебные пособия/${book}.pdf">${book}</a>`;
 	document.getElementById('methodical-content-list').append(li);
 }
 for(let book of literature["Контроль знаний"]){
