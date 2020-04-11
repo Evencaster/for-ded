@@ -26,6 +26,9 @@
 		#authors-content {
 			display: none;
 		}
+		#search-content {
+			display: none;
+		}
 	</style>
 	<script type="text/javascript" src="literature.js"></script>
 	<script type="text/javascript">
@@ -43,9 +46,9 @@
 			for(books in literature)
 				for(book of literature[books]) {
 					console.log(book);
-					if(getBookName(book).match(query)) {
+					if(getBookObj(book).name.match(query)) {
 						let li = document.createElement('li');
-						li.innerHTML = `<a href="${book}">${getBookName(book)}</a>`;
+						li.innerHTML = `<a href="${book}" style="margin-top: 10px">${getBookObj(book).name}</a>`;
 						searchList.append(li);
 					}
 				}
@@ -118,32 +121,40 @@
 				</div>
 			</div>
 		</div>
-		<div id="programm-content" class="content">
-			<h1>Программа дисциплины</h1>
-			<ul id="programm-content-list"></ul>
+		<div id="programm-content" class="content content-page">
+			<h1 class="content-header">Программа дисциплины</h1>
+			<ul id="programm-content-list" class="content-list"></ul>
 		</div>
-		<div id="theory-content" class="content">
-			<h1>Теория по курсу</h1>
-			<ul id="theory-content-list"></ul>
+		<div id="theory-content" class="content content-page">
+			<h1 class="content-header">Теория по курсу</h1>
+			<ul id="theory-content-list" class="content-list"></ul>
 		</div>
-		<div id="practic-content" class="content">
-			<h1>Практика</h1>
-			<ul id="practic-content-list"></ul>
+		<div id="practic-content" class="content content-page">
+			<h1 class="content-header">Практика</h1>
+			<ul id="practic-content-list" class="content-list"></ul>
 		</div>
-		<div id="methodical-content" class="content">
-			<h1>Методическая литература</h1>
-			<ul id="methodical-content-list"></ul>
+		<div id="methodical-content" class="content content-page">
+			<h1 class="content-header">Методическая литература</h1>
+			<ul id="methodical-content-list" class="content-list"></ul>
 		</div>
-		<div id="control-content" class="content">
-			<h1>Контроль знаний</h1>
-			<ul id="control-content-list"></ul>
+		<div id="control-content" class="content content-page">
+			<h1 class="content-header">Контроль знаний</h1>
+			<ul id="control-content-list" class="content-list"></ul>
 		</div>
-		<div id="authors-content" class="content">
-			<h1>Авторы</h1>
-			Мельников В. А.
+		<div id="authors-content" class="content content-page">
+			<h1 class="content-header" >Авторы</h1>
+			<img src="images/author.jpg">
+			<div class="authors-text">
+				<h2>МЕЛЬНИКОВ ВЛАДИМИР АЛЕКСАНДРОВИЧ</h1>
+				<h3>Доцент</h3>
+				<h3>Ауд. 312-1</h3>
+				<h3>Тел.: 86-10, 293-86-10</h3>
+				<h3>E-mail: <a href="mailto:melva@bsuir.by">melva@bsuir.by</a></h3>
+			</div>
 		</div>
-		<div id="search-content" class="content">
-			<ul id="search-content-list"></ul>
+		<div id="search-content" class="content content-page">
+			<h1 class="content-header">Поиск</h1>
+			<ul id="search-content-list" class="content-list"></ul>
 		</div>
 		<div class="footer">&#169;БГУИР</div>
 		<script type="text/javascript" src="add_lit.js"></script>

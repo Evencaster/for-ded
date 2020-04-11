@@ -35,12 +35,16 @@ body {
 	color: #283593;
 	background-color: white;
 }
+.search {
+	margin-left: auto;
+	margin-right: 0;
+}
 .content-grid {
 	margin-top: 50px;
 	margin-bottom: 30px;
 	margin-left: 100px;
 	display: grid;
-  	grid-template-columns: 300px 300px 300px 300px;
+  	grid-template-columns: 250px 250px 250px 250px 250px;
 }
 .content-cell {
 	display: block;
@@ -64,11 +68,23 @@ body {
 .content-button-text {
 	margin-top: 35px;
 }
+.content-page {
+	margin-left: 30px;
+}
 .content-text {
 	margin-top: 10px;
 	font-size: 14px;
 }
-
+.content-header {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.content-list {
+	padding: 10px;
+}
+/*.authors-text {
+	text-align: right;
+}*/
 .footer {
 	text-align: center;
 	background-color: #CCCCCC;
