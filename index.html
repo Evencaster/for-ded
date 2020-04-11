@@ -20,6 +20,9 @@
 		#control-content {
 			display: none;
 		}
+		#methodical-content {
+			display: none;
+		}
 		#authors-content {
 			display: none;
 		}
@@ -29,6 +32,23 @@
 		const switchTab = tab => {
 			for(let el of document.getElementsByClassName('content')) el.style.display = 'none'
 				document.getElementById(tab).style.display = 'block'
+		}
+
+		const search = query => {
+			if(document.getElementById('search').style.display !== 'block') switchTab('search-content');
+			let searchList = document.getElementById('search-content-list');
+
+			searchList.innerHTML = '';
+
+			for(books in literature)
+				for(book of literature[books]) {
+					console.log(book);
+					if(getBookName(book).match(query)) {
+						let li = document.createElement('li');
+						li.innerHTML = `<a href="${book}">${getBookName(book)}</a>`;
+						searchList.append(li);
+					}
+				}
 		}
 	</script>
 </head>
@@ -48,9 +68,10 @@
 				<div id="programm-tab" onclick="switchTab('programm-content')" class="tab">Программа</div>
 				<div id="theory-tab" onclick="switchTab('theory-content')" class="tab">Теория</div>
 				<div id="practic-tab" onclick="switchTab('practic-content')" class="tab">Практика</div>
+				<div id="control-tab" onclick="switchTab('methodical-content')" class="tab">Методическая литература</div>
 				<div id="control-tab" onclick="switchTab('control-content')" class="tab">Контроль знаний</div>
 				<div id="authors-tab" onclick="switchTab('authors-content')" class="tab">Об авторах</div>
-				<input type="text" placeholder="Поиск" class="search">
+				<input type="text" placeholder="Поиск" id="search" class="search" onchange="search(this.value)" onkeyup="this.onchange();">
 			</div>
 		</div>
 		<div id="table-of-contents-content" class="content">
@@ -80,6 +101,14 @@
 					<div class="content-text">Материалы для практических занятий, лабораторного практикума по дисциплине</div>
 				</div>
 				<div class="content-cell">
+					<div class="content-button" onclick="switchTab('methodical-content')">
+						<div class="content-button-text">
+							Методическая литература
+						</div>
+					</div>
+					<div class="content-text">Материалы по методике самостоятельного изучения и практического освоения дисциплины</div>
+				</div>
+				<div class="content-cell">
 					<div class="content-button" onclick="switchTab('control-content')">
 						<div class="content-button-text">
 							Контроль знаний
@@ -90,21 +119,33 @@
 			</div>
 		</div>
 		<div id="programm-content" class="content">
+			<h1>Программа дисциплины</h1>
 			<ul id="programm-content-list"></ul>
 		</div>
 		<div id="theory-content" class="content">
+			<h1>Теория по курсу</h1>
 			<ul id="theory-content-list"></ul>
 		</div>
 		<div id="practic-content" class="content">
+			<h1>Практика</h1>
 			<ul id="practic-content-list"></ul>
 		</div>
+		<div id="methodical-content" class="content">
+			<h1>Методическая литература</h1>
+			<ul id="methodical-content-list"></ul>
+		</div>
 		<div id="control-content" class="content">
+			<h1>Контроль знаний</h1>
 			<ul id="control-content-list"></ul>
 		</div>
 		<div id="authors-content" class="content">
+			<h1>Авторы</h1>
 			Мельников В. А.
 		</div>
+		<div id="search-content" class="content">
+			<ul id="search-content-list"></ul>
+		</div>
 		<div class="footer">&#169;БГУИР</div>
-		<script type="text/javascript" src="add_literature.js"></script>
+		<script type="text/javascript" src="add_lit.js"></script>
 	</body>
 	</html>
